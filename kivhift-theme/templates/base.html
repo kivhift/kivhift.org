@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+  <meta charset="utf-8" />
+  <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/kivhift.css" />
+</head>
+<body>
+  <header id="banner">
+    <a id="titlelink" href="{{ SITEURL }}/">{{ SITENAME }}{% if SITESUBTITLE %}{{ SITESUBTITLE }}{% endif %}</a>
+    <nav>
+      {% for title, link in MENUITEMS %}
+      <a href="{{ link }}">{{ title }}</a>
+      {% endfor %}
+      {% for pg in pages %}
+      <a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a>
+      {% endfor %}
+    </nav>
+  </header>
+  {% block content %}
+  {% endblock %}
+  <footer id="siteinfo">
+    Copyright &copy; 2015 by Joshua Hughes, all rights reserved.
+  </footer>
+</body>
+</html>

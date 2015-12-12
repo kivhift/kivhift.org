@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content_title %}{% endblock %}
+{% block content %}
+<br />
+<section>
+<dl>
+{% for article in articles_page.object_list %}
+  <dt class="entry-title">
+    <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+    <time>{{ article.locale_date }}</time>
+  </dt>
+  <dd>{{ article.summary }}</dd>
+{% endfor %}
+</dl>
+</section>
+{% endblock content %}

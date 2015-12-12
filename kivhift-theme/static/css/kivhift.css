@@ -1,0 +1,117 @@
+/* Copyright (c) 2015 Joshua Hughes <kivhift@gmail.com> */
+@import url("consolable.css");
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono|Vollkorn|Merriweather);
+
+/* resets */
+html, body, a, header, nav, dl {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    border: 0;
+    outline: 0;
+    background: transparent;
+}
+
+body {
+    font-family: 'Merriweather';
+    background-color: black;
+    color: #a0a0a0;
+    width: 60%;
+    min-width: 400px;
+    margin: 2% 20%;
+}
+
+a {
+    color: rgba(0, 255, 0, 0.5);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+a:hover, a:focus {
+    color: rgba(0, 255, 0, 0.8);
+}
+
+a#titlelink {
+    font-size: 2em;
+    font-family: 'Vollkorn';
+    font-weight: bold;
+}
+
+header#banner,
+footer#siteinfo {
+    background-color: #001f00;
+    border: thin solid green;
+    border-radius: 5px;
+    padding: 0.5em;
+}
+
+header#banner nav a {
+    padding: 0.5em;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Vollkorn';
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+header#banner nav a:hover,
+header#banner nav a:focus {
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 255, 0, 0.15);
+}
+header#banner nav {
+    padding: 0.5em;
+    display: inline;
+    float: right;
+}
+footer#siteinfo {
+    font-size: 80%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.571em;
+}
+h3 {
+    font-size: 1.429em;
+}
+h4  {
+    font-size: 1.286em;
+}
+h5  {
+    font-size: 1.143em;
+}
+h6  {
+    font-size: 1em;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Vollkorn';
+}
+
+pre {
+    font-family: 'Ubuntu Mono';
+    margin: 2em 2em 2em 2em;
+}
+
+header.entry-title a,
+dt.entry-title a {
+    font-family: 'Vollkorn';
+    font-size: 2em;
+    font-weight: bold;
+}
+header.entry-title time,
+dt.entry-title time {
+    font-size: 90%;
+    font-style: italic;
+    float: right;
+}
+header.entry-title,
+dt.entry-title {
+    border-left: thin dashed rgba(0, 255, 0, 0.3);
+    border-bottom: thin dashed rgba(0, 255, 0, 0.3);
+    border-radius: 5px;
+    padding-left: 0.5em;
+}
