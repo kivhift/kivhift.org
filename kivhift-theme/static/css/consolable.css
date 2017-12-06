@@ -34,7 +34,7 @@ pre > span.kr { color: #87d700; }
 pre > span.kt { color: #00af00; }
 pre > span.ld {}
 pre > span.m { color: #af00d7; background-color: #00005f }
-pre > span.s { color: #af0087; background-color: #1c1c1c }
+pre > span.s { color: #008787; background-color: #1c1c1c }
 pre > span.na { color: #00afff; }
 pre > span.nb {}
 pre > span.nc {}
@@ -56,17 +56,17 @@ pre > span.mf { color: #af00d7; background-color: #00005f }
 pre > span.mh { color: #af00d7; background-color: #00005f }
 pre > span.mi { color: #af00d7; background-color: #00005f }
 pre > span.mo { color: #af00d7; background-color: #00005f }
-pre > span.sb { color: #af0087; background-color: #1c1c1c }
-pre > span.sc { color: #af0087; background-color: #1c1c1c }
-pre > span.sd { color: #af0087; background-color: #1c1c1c }
-pre > span.s2 { color: #af0087; background-color: #1c1c1c }
-pre > span.se { color: #af0087; background-color: #1c1c1c }
-pre > span.sh { color: #af0087; background-color: #1c1c1c }
-pre > span.si { color: #af0087; background-color: #1c1c1c }
-pre > span.sx { color: #af0087; background-color: #1c1c1c }
-pre > span.sr { color: #af0087; background-color: #1c1c1c }
-pre > span.s1 { color: #af0087; background-color: #1c1c1c }
-pre > span.ss { color: #af0087; background-color: #1c1c1c }
+pre > span.sb { color: #008787; background-color: #1c1c1c }
+pre > span.sc { color: #008787; background-color: #1c1c1c }
+pre > span.sd { color: #008787; background-color: #1c1c1c }
+pre > span.s2 { color: #008787; background-color: #1c1c1c }
+pre > span.se { color: #008787; background-color: #1c1c1c }
+pre > span.sh { color: #008787; background-color: #1c1c1c }
+pre > span.si { color: #008787; background-color: #1c1c1c }
+pre > span.sx { color: #008787; background-color: #1c1c1c }
+pre > span.sr { color: #008787; background-color: #1c1c1c }
+pre > span.s1 { color: #008787; background-color: #1c1c1c }
+pre > span.ss { color: #008787; background-color: #1c1c1c }
 pre > span.bp {}
 pre > span.vc { color: #d75f00; }
 pre > span.vg { color: #d75f00; }
