@@ -4,7 +4,6 @@ Underscore your C/C++ bugs
 
 :author: Joshua Hughes
 :date: 2015-07-17 14:23:45
-:summary: A simple method for tracing C/C++ bugs is discussed.
 
 Wouldn't it be great if you could have your bugs tell you where they are in
 your C/C++ code?  Well, it turns out that you can; or at least you can leave a

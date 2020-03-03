@@ -1,12 +1,12 @@
-PELICAN=pelican
-INPUTDIR=content
-OUTPUTDIR=output
+PELICAN := pelican
+INPUTDIR := content
+OUTPUTDIR := output
 
 html:
 	$(PELICAN) -s pelicanconf.py $(INPUTDIR)
 
 clean:
-	rm -rf $(OUTPUTDIR)
+	$(RM) -r $(OUTPUTDIR)
 
 publish:
 	$(PELICAN) -s publishconf.py $(INPUTDIR)

@@ -65,7 +65,8 @@ header#banner nav {
     float: right;
 }
 footer#siteinfo {
-    font-size: 80%;
+    display: none;
+    font-size: 50%;
     text-align: center;
 }
 

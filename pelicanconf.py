@@ -4,7 +4,8 @@ SITEURL = ''
 
 PATH = 'content'
 PAGE_PATHS = ['']
-ARTICLE_PATHS = ['posts']
+ARTICLE_PATHS = 'posts'.split()
+STATIC_PATHS = 'images static'.split()
 DIRECT_TEMPLATES = 'index'.split()
 
 TIMEZONE = 'America/New_York'
@@ -25,6 +26,7 @@ AUTHORS_SAVE_AS = ''
 CATEGORY_URL = ''
 CATEGORY_SAVE_AS = ''
 CATEGORIES_SAVE_AS = ''
+SUMMARY_MAX_LENGTH = 0
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
