@@ -116,3 +116,25 @@ dt.entry-title {
     border-radius: 5px;
     padding-left: 0.5em;
 }
+
+canvas#gol {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+fieldset#gol-controls {
+    border: thin solid green;
+    border-radius: 5px;
+    font-size: 80%;
+    padding: 0.3em;
+}
+
+#gol-controls button,
+#gol-controls select {
+    border: thin solid green;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: #001f00;
+    font-family: 'Vollkorn';
+}

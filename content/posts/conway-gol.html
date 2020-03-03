@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Conway's Game of Life</title>
+    <meta name="author" content="Joshua Hughes" />
+    <meta name="date" content="2017-12-05 23:24:55" />
+  </head>
+  <body>
+    <h2>Some background</h2>
+    <p>I recently found the implementation of <a
+      href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's
+      Game of Life</a> that I wrote while working through Marijn Haverbeke's
+    book <i>Eloquent JavaScript</i>.  I find it strangely calming to set it to
+    random and then try and eliminate the whole population while <i>Auto</i> is
+    checked.  I decided to post it so that it would be out there, just in case.</p>
+
+    <h2>Use it thusly</h2>
+    <p>You can toggle the state of a cell by clicking it.  Select from a few
+    initial configurations by using the combo box.  Step through one generation
+    by clicking the <i>Tick</i> button.  If <i>Auto</i> is checked, then
+    generations are progressed every quarter second.</p>
+    <div>
+      <fieldset id="gol-controls">
+        <label for="init">Initialization</label>
+        <select id="init"></select>
+        <button id="tick">Tick</button>
+        <input type="checkbox" id="auto">Auto</input>
+      </fieldset>
+    </div>
+    <div><canvas id="gol"></canvas></div>
+    <script src="{static}/static/conway-gol.js"></script>
+  </body>
+</html>
