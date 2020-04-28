@@ -1,4 +1,4 @@
-/* Copyright (c) 2017 Joshua Hughes <kivhift@gmail.com> */
+/* Copyright (c) 2017-2020 Joshua Hughes <kivhift@gmail.com> */
 "use strict";
 
 var canv = document.querySelector('#gol'), cx = canv.getContext('2d');
@@ -15,7 +15,7 @@ function Grid(width) {
     g.next = new Array(g.data.length);
     return g;
 }
-var grid = Grid(101);
+var grid = Grid(150);
 
 function offset(r, c) {
     return r * grid.side + c;
@@ -28,6 +28,16 @@ function blankGrid() {
         grid.data[i] = false;
     }
 }
+function setFromMiddle(offsets) {
+    var mr, mc, d = grid.data;
+    mr = mc = middle();
+    for (var i = 0; i < offsets.length; i++) {
+        var roff = offsets[i][0];
+        offsets[i].slice(1).forEach(
+            coff => d[offset(mr + roff, mc + coff)] = true
+        );
+    }
+}
 
 var patterns = Object.create(null);
 patterns.Random = function() {
@@ -38,43 +48,27 @@ patterns.Random = function() {
 };
 patterns['R-pentomino'] = function() {
     blankGrid();
-
-    var mr, mc, d = grid.data;
-
-    mr = mc = middle();
-    d[offset(mr - 1, mc)] = true;
-    d[offset(mr - 1, mc + 1)] = true;
-    d[offset(mr, mc - 1)] = true;
-    d[offset(mr, mc)] = true;
-    d[offset(mr + 1, mc)] = true;
+    setFromMiddle([
+        [-1, 0, 1]
+        , [0, -1, 0]
+        , [1, 0]
+    ]);
 };
 patterns.Diehard = function() {
     blankGrid();
-
-    var mr, mc, d = grid.data;
-
-    mr = mc = middle();
-    d[offset(mr - 1, mc + 2)] = true;
-    d[offset(mr, mc - 4)] = true;
-    d[offset(mr, mc - 3)] = true;
-    d[offset(mr + 1, mc - 3)] = true;
-    d[offset(mr + 1, mc + 1)] = true;
-    d[offset(mr + 1, mc + 2)] = true;
-    d[offset(mr + 1, mc + 3)] = true;
+    setFromMiddle([
+        [-1, 2]
+        , [0, -4, -3]
+        , [1, -3, 1, 2, 3]
+    ]);
 };
 patterns.Acorn = function() {
     blankGrid();
-
-    var mr, mc, d = grid.data;
-
-    mr = mc = middle();
-    d[offset(mr - 1, mc - 2)] = true;
-    d[offset(mr, mc)] = true;
-    d[offset(mr + 1, mc - 3)] = true;
-    d[offset(mr + 1, mc - 2)] = true;
-    d[offset(mr + 1, mc + 1)] = true;
-    d[offset(mr + 1, mc + 2)] = true;
-    d[offset(mr + 1, mc + 3)] = true;
+    setFromMiddle([
+        [-1, -2]
+        , [0, 0]
+        , [1, -3, -2, 1, 2, 3]
+    ]);
 };
 patterns.Tube = function() {
     blankGrid();
@@ -88,6 +82,95 @@ patterns.Tube = function() {
             d[offset(i, mc - 1)] = true;
         }
     }
+};
+patterns["Munroe's Conway Tribute"] = function() {
+    blankGrid();
+    setFromMiddle([
+        [-4, -1, 0, 1]
+        , [-3, -1, 1]
+        , [-2, -1, 1]
+        , [-1, 0]
+        , [0, -3, -1, 0, 1]
+        , [1, -2, 0, 2]
+        , [2, 0, 3]
+        , [3, -1, 1]
+        , [4, -1, 1]
+    ]);
+};
+patterns['Gosper Glider Gun'] = function() {
+    blankGrid();
+    setFromMiddle([
+        [-4, 7]
+        , [-3, 5, 7]
+        , [-2, -5, -4, 3, 4, 17, 18]
+        , [-1, -6, -2, 3, 4, 17, 18]
+        , [0, -17, -16, -7, -1, 3, 4]
+        , [1, -17, -16, -7, -3, -1, 0, 5, 7]
+        , [2, -7, -1, 7]
+        , [3, -6, -2]
+        , [4, -5, -4]
+    ]);
+};
+patterns['Simkin Glider Gun'] = function() {
+    blankGrid();
+    setFromMiddle([
+        [-10, -16, -15, -9, -8]
+        , [-9, -16, -15, -9, -8]
+        , [-7, -12, -11]
+        , [-6, -12, -11]
+        , [-1, 6, 7, 9, 10]
+        , [0, 5, 11]
+        , [1, 5, 12, 15, 16]
+        , [2, 5, 6, 7, 11, 15, 16]
+        , [3, 10]
+        , [7, 4, 5]
+        , [8, 4]
+        , [9, 5, 6, 7]
+        , [10, 7]
+    ]);
+};
+patterns.Gliders = function() {
+    blankGrid();
+
+    var d = grid.data;
+    var end = grid.side - 2;
+    for (var r = 0; r < end; r += 5) {
+        for (var c = 0; c < end; c += 5) {
+            d[offset(r, c)] = true;
+            d[offset(r, c + 1)] = true;
+            d[offset(r, c + 2)] = true;
+            d[offset(r + 1, c + 2)] = true;
+            d[offset(r + 2, c + 1)] = true;
+        }
+    }
+};
+patterns['Infinite Growth 1'] = function() {
+    blankGrid();
+    setFromMiddle([
+        [-2, 3]
+        , [-1, 1, 3, 4]
+        , [0, 1, 3]
+        , [1, 1]
+        , [2, -1]
+        , [3, -3, -1]
+    ]);
+};
+patterns['Infinite Growth 2'] = function() {
+    blankGrid();
+    setFromMiddle([
+        [-2, -2, -1, 0, 2]
+        , [-1, -2]
+        , [0, 1, 2]
+        , [1, -1, 0, 2]
+        , [2, -2, 0, 2]
+    ]);
+};
+patterns['Infinite Growth 3'] = function() {
+    blankGrid();
+    setFromMiddle([
+        [0, -19, -18, -17, -16, -15, -14, -13, -12, -10, -9, -8, -7, -6, -2
+            , -1, 0, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19]
+    ]);
 };
 patterns.Blank = blankGrid;
 
