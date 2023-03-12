@@ -145,6 +145,10 @@ patterns["Munroe's Conway Tribute"] = function() {
     blankGrid();
     setRLE("7x9y2b3o$2bobo$2bobo$3bo$ob3o$bobobo$3bo2bo$2bobo$2bobo!");
 };
+patterns['Happy Gliders'] = function() {
+    blankGrid();
+    setRLE("8x4y2bo2bo$o6bo$bo4bo$2b4o!");
+};
 patterns['Gosper Glider Gun'] = function() {
     blankGrid();
     setRLE("36x9y"
