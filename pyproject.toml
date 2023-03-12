@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "kivhift-org"
+version = "1.2.1"
+description = "Just need a venv to run pelican, etc."
+authors = ["Joshua Hughes <kivhift@gmail.com>"]
+readme = ""
+packages = []
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pelican = "^4.8.0"
+typogrify = "^2.0.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
