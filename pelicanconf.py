@@ -5,7 +5,7 @@ SITEURL = ''
 PATH = 'content'
 PAGE_PATHS = ['']
 ARTICLE_PATHS = 'posts'.split()
-STATIC_PATHS = 'images static'.split()
+STATIC_PATHS = 'static'.split()
 DIRECT_TEMPLATES = 'index'.split()
 
 TIMEZONE = 'America/New_York'
