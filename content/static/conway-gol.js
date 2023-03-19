@@ -1,4 +1,4 @@
-/* Copyright (c) 2017-2020 Joshua Hughes <kivhift@gmail.com> */
+/* Copyright (c) 2017-2023 Joshua Hughes <kivhift@gmail.com> */
 "use strict";
 
 var canv = document.querySelector('#gol'), cx = canv.getContext('2d');
@@ -148,6 +148,21 @@ patterns["Munroe's Conway Tribute"] = function() {
 patterns['Happy Gliders'] = function() {
     blankGrid();
     setRLE("8x4y2bo2bo$o6bo$bo4bo$2b4o!");
+};
+patterns['Square Flower'] = function() {
+    blankGrid();
+    setRLE("9x9y"
+    + "4ob4o$obo3bobo$2o5b2o$o2b3o2bo$3b3o3b$o2b3o2bo$2o5b2o$obo3bobo$4ob4o!"
+    );
+};
+patterns['Gosper Centinal'] = function() {
+    blankGrid();
+    setRLE("52x17y"
+    + "2o48b2o$bo48bob$bobo21b2o21bobob$2b2o8bo12b2o12b2o7b2o2b$"
+    + "11b2o26bobo10b$10b2o29bo10b$11b2o2b2o22b3o10b$3$"
+    + "11b2o2b2o22b3o10b$10b2o29bo10b$11b2o26bobo10b$2b2o8bo12b2o12b2o7b2o2b$"
+    + "bobo21b2o21bobob$bo48bob$2o48b2o!"
+    );
 };
 patterns['Gosper Glider Gun'] = function() {
     blankGrid();
