@@ -2,6 +2,9 @@ PELICAN := pelican
 INPUTDIR := content
 OUTPUTDIR := output
 
+# Make sure that Python doesn't create __pycache__ and write *.pyc.
+export PYTHONDONTWRITEBYTECODE = x
+
 html:
 	$(PELICAN) -s pelicanconf.py $(INPUTDIR)
 

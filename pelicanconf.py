@@ -3,13 +3,14 @@ SITENAME = 'kivhiftian ruminations'
 SITEURL = ''
 
 PATH = 'content'
-PAGE_PATHS = ['']
+PAGE_PATHS = 'pages'.split()
 ARTICLE_PATHS = 'posts'.split()
 STATIC_PATHS = 'static'.split()
+PAGE_EXCLUDES = ARTICLE_EXCLUDES = STATIC_PATHS
 DIRECT_TEMPLATES = 'index'.split()
 
 TIMEZONE = 'America/New_York'
-DEFAULT_DATE_FORMAT = '%Y-%m-%d, %A'
+DEFAULT_DATE_FORMAT = '%Y-%m-%d'
 DEFAULT_LANG = 'en'
 DEFAULT_CATEGORY = ''
 DISPLAY_CATEGORIES_ON_MENU = False

@@ -11,8 +11,6 @@ If you'd like to contact me, you can use one of the following:
 
 - `Email <mailto:kivhift@gmail.com>`_
 - `GitHub <http://github.com/kivhift>`_
-- `Bitbucket <http://bitbucket.org/kivhift>`_
-- `Twitter <http://twitter.com/kivhift>`_
 
 Website
 -------
